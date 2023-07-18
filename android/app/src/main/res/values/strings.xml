@@ -1,0 +1,8 @@
+<resources>
+  <string name="app_name">QuanLyTaiChinh</string>
+  <string name="expo_splash_screen_resize_mode" translatable="false">contain</string>
+  <string name="expo_splash_screen_status_bar_translucent" translatable="false">false</string>
+
+   <string name="facebook_app_id">251132861001733</string>
+  <string name="fb_login_protocol_scheme">fb251132861001733</string>
+</resources>
