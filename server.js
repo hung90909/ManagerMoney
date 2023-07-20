@@ -24,9 +24,15 @@ app.engine('.hbs', handlebars.engine({
 }))
 app.set('view engine', '.hbs');
 app.set('views', './views');
-app.use("/user",user)
-app.use("/loaiCT",loaiCT)
-app.use("/giaoDich",giaoDich)
+app.use("/user", user)
+app.use("/loaiCT", loaiCT)
+app.use("/giaoDich", giaoDich)
 app.listen(port, function () {
     console.log("running port " + port)
-}) 
+})
+
+
+
+//       "engines": {
+//     "node": ">=14 <15"
+//   }

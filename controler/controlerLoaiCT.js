@@ -53,7 +53,4 @@ app.post('/addLoaiCT', upload.single('image'), async (req, res) => {
   });
   
 
-
-
-
 module.exports = app
