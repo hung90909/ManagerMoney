@@ -12,7 +12,7 @@ app.use(bodyparser.json())
 app.use(express.json())
 app.use(methods("_method"))
 const port = 9999;
-mongoose.connect('mongodb://127.0.0.1/ManagerMoney')
+mongoose.connect('mongodb://0.0.0.0:27017/ManagerMoney')
     .then(function () {
         console.log("ket noi thanh cong !")
     })
