@@ -10,6 +10,7 @@ app.use(express.json())
 
 app.post("/addGiaoDich" ,async (req, res) => {
    try {
+    console.log(req.body)
      const chiTieu = new chiTietCT(req.body);
      await chiTieu.save();
      res.send("luu thanh cong")
