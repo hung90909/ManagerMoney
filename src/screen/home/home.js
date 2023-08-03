@@ -52,7 +52,8 @@ export default function Home() {
               const transactionDate = Moment(transaction.ngay); // Giả sử "date" là trường chứa thời gian của giao dịch
       
               // So sánh với thời gian hiện tại
-              if (Moment().diff(transactionDate, 'months') >= 1) {
+              if (Moment().diff(transactionDate,'ngay') >= 1) {
+            
                 deleteGiaoDich(transaction._id); // Hàm xóa giao dịch từ cơ sở dữ liệu
               }
             });

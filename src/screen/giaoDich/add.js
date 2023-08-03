@@ -11,7 +11,6 @@ export default function Add(props) {
     const { item } = route.params
     const nav = props.navigation
     const status = useIsFocused()
-
     const getUserID = async () => {
         try {
             const user = await AsyncStorage.getItem("data");
@@ -33,6 +32,7 @@ export default function Add(props) {
 
     const [user, setUser] = useState({})
     const [soTien, setSoTien] = useState(item.soTien)
+    const [errorMoney, setErrorMoney] = useState("")
     const [ghiChu, setGhiChu] = useState(item.ghiChu)
     const [ngay, setNgay] = useState(new Date())
     const [id, setID] = useState('')
@@ -83,7 +83,13 @@ export default function Add(props) {
             <TextInput
                 value={soTien}
                 onChangeText={(text) => {
-                    setSoTien(text);
+                    if(isNaN(text)){
+                        setErrorMoney("Không phải là số")
+                    }else{
+                         setSoTien(text);
+                         setErrorMoney("")
+                    }
+                   
                 }}
                 keyboardType="numeric"
                 placeholder='Nhập số tiền'
@@ -91,6 +97,9 @@ export default function Add(props) {
                     marginTop: 30, fontSize: 25, marginLeft: 55
                 }}
             />
+            {errorMoney && <Text style={{
+                color: "red",  marginLeft: 55
+            }}>{errorMoney}</Text>}
             <TouchableOpacity
                 onPress={() => {
                     nav.navigate("LoaiGD")

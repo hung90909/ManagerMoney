@@ -34,6 +34,7 @@ export default function AllGiaoDich() {
                     .then(item => item.json())
                     .then(item => setListGiaoDich(item))
                     .catch(err => console.log(err))
+             
 
                 const responseUser = await fetch(API_User + "/getUser/" + id);
                 const dataUser = await responseUser.json();

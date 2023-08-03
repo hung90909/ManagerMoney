@@ -13,7 +13,8 @@ export default function SuaGiaDich(props) {
     const nav = useNavigation()
     const route = useRoute()
     const { item } = route.params;
-
+    
+    // console.log(item._id)
     const [soTien, setSoTien] = useState(item.soTien+"")
     const [ghiChu, setGhiChu] = useState(item.ghiChu)
 
@@ -21,8 +22,12 @@ export default function SuaGiaDich(props) {
         const data = {soTien , ghiChu}
         fetch(API_GiaoDich+"/updateGiaoDich/"+ item._id,{
             method:"PUT",
-            body:JSON.stringify(data)
-        })
+            body:JSON.stringify(data),
+            headers:{
+                "Content-Type": "application/json"
+            }
+        }).then(() => nav.navigate("Home"))
+        .catch(err => console.log(err))
     }
     return (
         <View style={{
